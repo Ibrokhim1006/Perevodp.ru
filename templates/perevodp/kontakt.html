@@ -1,0 +1,72 @@
+{% extends 'perevodp/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} <title>Контакт</title> {% endblock %}
+{% block content %}
+
+
+<div class="container" style="margin-top: 80px !important;">
+    <div class="row">
+        <div class="col lg-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination flex-wrap p-3">
+                    {% for object in request.get_catgor %}
+                        <li class="page-item p-1"><a class="page-link" style="color: #5c00ce;" href="{% url 'get_categor' object.id %}">{{object.name}}</a></li>
+                    {% endfor %}
+                </ul>
+              </nav>
+        </div>
+    </div>
+</div>
+ 
+<h4 class="text-center p-4">Контакт</h4>
+
+<!-- Contact Section Begin -->
+<section class="contact spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-4">
+                <div class="contact__address">
+                    <div class="section-title">
+                        <h2>Контакт</h2>
+                    </div>
+                    <ul class="mt-3">
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <h5>Телефон</h5>
+                            <span>1-677-124-44227</span>
+                            <span>1-688-356-66889</span>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <h5>E-mail</h5>
+                            <p>adsens.website@gmail.com</p>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-8">
+                <div class="contact__form">
+                    <div class="section-title">
+                        <h2>Отправить сообщение</h2>
+                    </div>
+                    <form action="#" class="mt-3">
+                        <div class="input__list">
+                            <input type="text" placeholder="Ф.И.О">
+                            <input type="text" placeholder="Email">
+                            <input type="text" placeholder="Телефон">
+                        </div>
+                        <textarea placeholder="Текст сообщени"></textarea>
+                        <button type="submit" class="site-btn">Отправить сообщение</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<!-- Contact Section End -->
+
+ 
+
+{% endblock %}

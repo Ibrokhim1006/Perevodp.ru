@@ -6,31 +6,43 @@
 {% block content %}
 
 
+<div class="container" style="margin-top: 80px !important;">
+    <div class="row">
+        <div class="col lg-12">
+            <nav aria-label="Page navigation example">
+                <ul class="pagination flex-wrap p-3">
+                    {% for object in request.get_catgor %}
+                        <li class="page-item p-1"><a class="page-link" style="color: #5c00ce;" href="{% url 'get_categor' object.id %}">{{object.name}}</a></li>
+                    {% endfor %}
+                </ul>
+              </nav>
+        </div>
+    </div>
+</div>
+ 
 
-    <!-- Hero Section Begin -->
-    <section class="hero spad set-bg" data-setbg="{% static 'perevod/img/hero-bg.png' %}">
-        <div class="container">
-            <div class="row">
-                <div class="col-lg-12">
-                    <div class="hero__text">
-                     
-                        <span>Перевод песен на русский язык</span>   <br>
-                        <br>
-                        <h5 style="color: #ffff;">Мы рады приветствовать вас!</h5>
-                        <br>
-                        <p>perevodp.ru - это тексты песен английских, русских и других исполнителей, которые собраны в большую коллекцию. Красивый дизайн, удобный поиск и простая навигация по сайту помогут вам быстро найти нужные тексты по исполнителю, названию или по словам самой песни. Переводы песен помогут стереть границы между языками и понять, о чем же поется в самой песне.</p>
-                        <br>
-                        <a href="https://www.youtube.com/watch?v=K4DyBUG242c" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+ <!-- About Section Begin -->
+ <section class="about about--page spad">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-6">
+                <div class="about__pic">
+                    <img src="{% static 'perevod/img/about/about.png' %}" alt="">
+                </div>
+            </div>
+            <div class="col-lg-6">
+                <div class="about__text">
+                    <div class="section-title">
+                        <h2>Перевод песен на русский язык</h2>
                     </div>
+                    <p>Сайт Перевод песен помогает вам понять смысл композиций, исполненных на иностранном языке. У нас вы найдете уникальные и качественно сделанные переводы иностранных песен на русский язык. На нашем сайте вы найдете перевод песен с английского, французского, немецкого, испанского, итальянского, украинского, турецкого, румынского, польского. Есть переводы с греческого, польского, албанского, датского, иврита и многих других языков, даже с языка зулусов :) На сайте размещены и оригинальные слова песен.</p>
+                    <img src="{% static 'perevod/img/about/signature.png' %}" alt="">
                 </div>
             </div>
         </div>
-        <div class="linear__icon">
-            <i class="fa fa-angle-double-down"></i>
-        </div>
-    </section>
-    <!-- Hero Section End -->
- 
+    </div>
+</section>
+<!-- About Section End -->
     
 
 
@@ -40,64 +52,23 @@
             <div class="row">
                 <div class="col-lg-12">
                     <div class="section-title">
-                        <h2>Последние песни</h2>
+                        <h2>Самый известный</h2>
                     </div>
                 </div>
             </div>
             <div class="row">
                 <div class="event__slider owl-carousel">
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-1.jpg' %}">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
+                    {% for item in objects_list %}
+                        <div class="col-lg-4">
+                            <div class="event__item">
+                                <div class="event__item__pic set-bg" data-setbg="{{item.img.url}}">
+                                </div>
+                                <div class="event__item__text">
+                                    <a href="{% url 'author_pesni' item.id %}" style="color: #5c00ce;font-size: 20px;" >{{item.name}}</a>
                                 </div>
                             </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
                         </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-2.jpg' %}">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-3.jpg' %}">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="col-lg-4">
-                        <div class="event__item">
-                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-2.jpg' %}">
-                                <div class="tag-date">
-                                    <span>Dec 15, 2019</span>
-                                </div>
-                            </div>
-                            <div class="event__item__text">
-                                <h4>David Guetta Miami Ultra</h4>
-                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
-                            </div>
-                        </div>
-                    </div>
+                    {% endfor %}
                 </div>
             </div>
         </div>
@@ -105,18 +76,6 @@
     <!-- Event Section End -->
 
 
-    <div class="container">
-        <div class="row">
-            <div class="col lg-12">
-                <nav aria-label="Page navigation example">
-                    <ul class="pagination flex-wrap p-3">
-                        {% for object in objects_list %}
-                            <li class="page-item p-1"><a class="page-link" style="color: #5c00ce;" href="#">{{object.name}}</a></li>
-                        {% endfor %}
-                    </ul>
-                  </nav>
-            </div>
-        </div>
-    </div>
+ 
 
 {% endblock %}
