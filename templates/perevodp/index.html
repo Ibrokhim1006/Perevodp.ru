@@ -1,0 +1,122 @@
+{% extends 'perevodp/base.html' %}
+{% load static %}
+{% load i18n %}
+
+{% block title %} <title>Perevodp.ru</title> {% endblock %}
+{% block content %}
+
+
+
+    <!-- Hero Section Begin -->
+    <section class="hero spad set-bg" data-setbg="{% static 'perevod/img/hero-bg.png' %}">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="hero__text">
+                     
+                        <span>Перевод песен на русский язык</span>   <br>
+                        <br>
+                        <h5 style="color: #ffff;">Мы рады приветствовать вас!</h5>
+                        <br>
+                        <p>perevodp.ru - это тексты песен английских, русских и других исполнителей, которые собраны в большую коллекцию. Красивый дизайн, удобный поиск и простая навигация по сайту помогут вам быстро найти нужные тексты по исполнителю, названию или по словам самой песни. Переводы песен помогут стереть границы между языками и понять, о чем же поется в самой песне.</p>
+                        <br>
+                        <a href="https://www.youtube.com/watch?v=K4DyBUG242c" class="play-btn video-popup"><i class="fa fa-play"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="linear__icon">
+            <i class="fa fa-angle-double-down"></i>
+        </div>
+    </section>
+    <!-- Hero Section End -->
+ 
+    
+
+
+      <!-- Event Section Begin -->
+      <section class="event spad">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-12">
+                    <div class="section-title">
+                        <h2>Последние песни</h2>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="event__slider owl-carousel">
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-1.jpg' %}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-2.jpg' %}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-3.jpg' %}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-lg-4">
+                        <div class="event__item">
+                            <div class="event__item__pic set-bg" data-setbg="{% static 'perevod/img/events/event-2.jpg' %}">
+                                <div class="tag-date">
+                                    <span>Dec 15, 2019</span>
+                                </div>
+                            </div>
+                            <div class="event__item__text">
+                                <h4>David Guetta Miami Ultra</h4>
+                                <p><i class="fa fa-map-marker"></i> Funkhaus Berlin, Berlin, Germany</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    <!-- Event Section End -->
+
+
+    <div class="container">
+        <div class="row">
+            <div class="col lg-12">
+                <nav aria-label="Page navigation example">
+                    <ul class="pagination flex-wrap p-3">
+                        {% for object in objects_list %}
+                            <li class="page-item p-1"><a class="page-link" style="color: #5c00ce;" href="#">{{object.name}}</a></li>
+                        {% endfor %}
+                    </ul>
+                  </nav>
+            </div>
+        </div>
+    </div>
+
+{% endblock %}

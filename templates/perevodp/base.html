@@ -1,0 +1,134 @@
+{% load static %}
+{% load i18n %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="description" content="DJoz Template">
+    <meta name="keywords" content="DJoz, unica, creative, html">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    {% block title %} {% endblock %}
+
+    <!-- Google Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Rajdhani:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Css Styles -->
+    <link rel="stylesheet" href="{% static 'perevod/css/bootstrap.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/font-awesome.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/barfiller.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/nowfont.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/rockville.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/magnific-popup.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/owl.carousel.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/slicknav.min.css' %}" type="text/css">
+    <link rel="stylesheet" href="{% static 'perevod/css/style.css' %}" type="text/css">
+</head>
+
+<body>
+    
+    <!-- Page Preloder -->
+    <div id="preloder">
+        <div class="loader"></div>
+    </div>
+
+    
+    <!-- Header Section Begin -->
+    <header class="header">
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-2 col-md-2">
+                    <div class="header__logo">
+                        <a href="{% url 'home' %}" style="font-size: 33px;color: #fff;font-weight: bold;">perevodp.ru</a>
+                    </div>
+                </div>
+                <div class="col-lg-10 col-md-10">
+                    <div class="header__nav">
+                        <nav class="header__menu mobile-menu">
+                            <ul>
+                                <li class="active"><a href="{% url 'home' %}">Домашняя страница</a></li>
+                                <li><a href="#">О нас</a></li>
+                                <li><a href="#">Контакт</a></li>
+                            
+                        </nav>
+                        <div class="header__right__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div id="mobile-menu-wrap"></div>
+        </div>
+    </header>
+    <!-- Header Section End -->
+
+    {% block content %}
+
+    {% endblock %}
+
+
+  <!-- Footer Section Begin -->
+  <footer class="footer footer--normal spad set-bg" data-setbg="{% static 'perevod/img/footer-bg.png' %}">
+    <div class="container">
+        <div class="row">
+            <div class="col-lg-3 col-md-6">
+                <div class="footer__address">
+                    <ul>
+                        <li>
+                            <i class="fa fa-phone"></i>
+                            <p>Телефон</p>
+                            <h6>1-677-124-44227</h6>
+                        </li>
+                        <li>
+                            <i class="fa fa-envelope"></i>
+                            <p>E-mail</p>
+                            <h6>adsens.website@gmail.com</h6>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-lg-4 offset-lg-1 col-md-6">
+                <div class="footer__social">
+                    <h2>perevodp.ru</h2>
+                    <div class="footer__social__links">
+                        <a href="#"><i class="fa fa-facebook"></i></a>
+                        <a href="#"><i class="fa fa-twitter"></i></a>
+                        <a href="#"><i class="fa fa-instagram"></i></a>
+                        <a href="#"><i class="fa fa-dribbble"></i></a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-lg-3 offset-lg-1 col-md-6">
+                <div class="footer__newslatter">
+                    <h4>Останься со мной</h4>
+                    <form action="#">
+                        <input type="text" placeholder="E-mail">
+                        <button type="submit"><i class="fa fa-send-o"></i></button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</footer>
+<!-- Footer Section End -->
+
+    <!-- Js Plugins -->
+    <script src="{% static 'perevod/js/jquery-3.3.1.min.js' %}"></script>
+    <script src="{% static 'perevod/js/bootstrap.min.js' %}"></script>
+    <script src="{% static 'perevod/js/jquery.magnific-popup.min.js' %}"></script>
+    <script src="{% static 'perevod/js/jquery.nicescroll.min.js' %"></script>
+    <script src="{% static 'perevod/js/jquery.barfiller.js' %}"></script>
+    <script src="{% static 'perevod/js/jquery.countdown.min.js' %}"></script>
+    <script src="{% static 'perevod/js/jquery.slicknav.js' %}"></script>
+    <script src="{% static 'perevod/js/owl.carousel.min.js' %}"></script>
+    <script src="{% static 'perevod/js/main.js' %}"></script>
+
+    <!-- Music Plugin -->
+    <script src="{% static 'perevod/js/jquery.jplayer.min.js' %}"></script>
+    <script src="{% static 'perevod/js/jplayerInit.js' %}"></script>
+</body>
+
+</html>
