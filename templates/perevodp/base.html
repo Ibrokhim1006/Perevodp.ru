@@ -34,7 +34,7 @@
 
     
     <!-- Header Section Begin -->
-    <header class="header">
+    <header class="header header--normal">
         <div class="container">
             <div class="row">
                 <div class="col-lg-2 col-md-2">
@@ -46,17 +46,16 @@
                     <div class="header__nav">
                         <nav class="header__menu mobile-menu">
                             <ul>
-                                <li class="active"><a href="{% url 'home' %}">Главная</a></li>
-                                <!-- <li><a href="#">О нас</a></li> -->
-                                <li><a href="{% url 'kontakt' %}">Контакт</a></li>
-                            
+                                <li>
+                                    <form method="get">
+                                        <div class="input-group mb-3">
+                                            <input type="search" class="form-control" placeholder="поиск" aria-label="Recipient's username" aria-describedby="button-addon2">
+                                            <button class="btn btn-outline-light " type="button" id="button-addon2">поиск</button>
+                                          </div>
+                                    </form>
+                                </li>
+                            </ul>
                         </nav>
-                        <div class="header__right__social">
-                            <a href="#"><i class="fa fa-facebook"></i></a>
-                            <a href="#"><i class="fa fa-twitter"></i></a>
-                            <a href="#"><i class="fa fa-instagram"></i></a>
-                            <a href="#"><i class="fa fa-dribbble"></i></a>
-                        </div>
                     </div>
                 </div>
             </div>

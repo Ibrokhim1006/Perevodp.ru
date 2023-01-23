@@ -3,45 +3,57 @@
 {% load i18n %}
 
 {% block title %} 
-    <title>{{object.title}} Перевод песни </title>
+    <title> {{object.title}} Перевод песни </title>
 {% endblock %}
 
 {% block content %}
 
-<div class="container" style="margin-top: 100px !important;">
-    <div class="row">
-        <div class="col lg-12">
-            <nav aria-label="Page navigation example">
-                <ul class="pagination flex-wrap p-3">
-                    {% for object in request.get_catgor %}
-                        <li class="page-item p-1"><a class="page-link" style="color: #5c00ce;" href="{% url 'get_categor' object.id %}">{{object.name}}</a></li>
-                    {% endfor %}
-                </ul>
-            </nav>
-        </div>
-    </div>
-</div>
-
-<h4 class="text-center p-4">Перевод песни {{object.title}} — {{object.en_title}}</h4>
-
 <section class="blog spad">
     <div class="container">
         <div class="row">
-            <div class="col-lg-12">
-                <div class="row d-flex justify-content-between">
-                    <div class="col-lg-4 col-md-4 col-sm-4">
-                        <h1 style="background-color: #5c00ce;color: #fff;" class="text-center">{{object.title}}</h1>
-                        <p class="text-cenetr">{{object.en_content|safe}}</p>
+            <div class="col-lg-8">
+                <div class="section-title">
+                    <h3>Перевод песни {{object.title}} - {{object.en_title}}</h3>
+                    <div class="row mt-5">
+                        <div class="col-lg-6">
+                            <h3 style="background-color: #CCCC33;text-align: center;color: #fff;border-radius: 3px;font-weight: bold;height: 40px;padding: 0;">{{object.title}}</h3>
+                            <p>{{object.ru_content|safe}}</p>
+                        </div>
+                        <div class="col-lg-6">
+                            <h3 style="background-color: #007bff;text-align: center;color: #fff;border-radius: 3px;font-weight: bold;height: 40px;padding: 0;">{{object.en_title}}</h3>
+                            <p>{{object.en_content|safe}}</p>
+                        </div>
                     </div>
-                    <div class="col-lg-4 col-md-4 col-sm-4" >
-                        <h1 class="text-center" style="background-color: cadetblue;">{{object.en_title}}</h1>
-                        <p class="text-cenetr">{{object.ru_content|safe}}</p>
+
+                </div>
+            </div>
+            <div class="col-lg-4">
+                <div class="blog__sidebar">
+                    <div class="blog__sidebar__item">
+                        <div class="blog__sidebar__title">
+                            <h4>Социальные сети</h4>
+                        </div>
+                        <div class="blog__sidebar__social">
+                            <a href="#"><i class="fa fa-facebook"></i></a>
+                            <a href="#"><i class="fa fa-twitter"></i></a>
+                            <a href="#"><i class="fa fa-instagram"></i></a>
+                            <a href="#"><i class="fa fa-dribbble"></i></a>
+                        </div>
+                    </div>
+                    <div class="blog__sidebar__item">
+                        <div class="blog__sidebar__title">
+                            <h4>Песни знаменитостей</h4>
+                        </div>
+                        <div class="list-group">
+                            {% for item in objects_list %}
+                            <a href="#" class="list-group-item list-group-item-action">{{item.title}}</a>
+                            {% endfor %}
+                          </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
-
 
 {% endblock %}
